@@ -4,20 +4,20 @@ b=0. Develop a suitable program which reads two values from the console and call
 DivExp.'''
 
 
-# import sys
-# def DivExp(a,b):
-#     assert a>0, "a should be greater than 0"
-#     try:
-#         c = a/b
-#     except ZeroDivisionError:
-#         print("Value of b cannot be zero")
-#         sys.exit(0)
-#     else:
-#         return c
-# val1 = int(input("Enter a value for a : "))
-# val2 = int(input("Enter a value for b : "))
-# val3 = DivExp(val1, val2)
-# print(val1, "/", val2, "=", val3)
+import sys
+def DivExp(a,b):
+    assert a>0, "a should be greater than 0"
+    try:
+        c = a/b
+    except ZeroDivisionError:
+        print("Value of b cannot be zero")
+        sys.exit(0)
+    else:
+        return c
+val1 = int(input("Enter a value for a : "))
+val2 = int(input("Enter a value for b : "))
+val3 = DivExp(val1, val2)
+print(val1, "/", val2, "=", val3)
 
 
 #==========================================================================================
@@ -26,43 +26,43 @@ DivExp.'''
  file. [Hint: Use string methods strip(), len(), list methods sort(), append(), and file methods open(),
 readlines(), and write()'''
   
-# import os.path
-# import sys
+import os.path
+import sys
 
-# fname = input("Enter the filename whose contents are to be sorted: ")
+fname = input("Enter the filename whose contents are to be sorted: ")
 
-# if not os.path.isfile(fname):
-#     print("File", fname, "doesn't exist")
-#     sys.exit(0)
+if not os.path.isfile(fname):
+    print("File", fname, "doesn't exist")
+    sys.exit(0)
 
-# infile = open(fname, "r")
-# myList = infile.readlines()
-# print(myList)
+infile = open(fname, "r")
+myList = infile.readlines()
+print(myList)
 
-# # Remove trailing \n characters
-# lineList = []
-# for line in myList:
-#     lineList.append(line.strip())
+# Remove trailing \n characters
+lineList = []
+for line in myList:
+    lineList.append(line.strip())
 
-# lineList.sort()
+lineList.sort()
 
-# outfile = open("sorted.txt", "w")
-# for line in lineList:
-#     outfile.write(line + "\n")
+outfile = open("sorted.txt", "w")
+for line in lineList:
+    outfile.write(line + "\n")
 
-# infile.close()  # Close the input file
-# outfile.close()  # Close the output file
+infile.close()  # Close the input file
+outfile.close()  # Close the output file
 
-# if os.path.isfile("sorted.txt"):
-#     print("\nFile containing sorted content sorted.txt created successfully")
+if os.path.isfile("sorted.txt"):
+    print("\nFile containing sorted content sorted.txt created successfully")
     
-# print("sorted.txt contains", len(lineList), "lines")
-# print("Contents of sorted.txt")
-# print("=====================")
+print("sorted.txt contains", len(lineList), "lines")
+print("Contents of sorted.txt")
+print("=====================")
 
-# rdFile = open("sorted.txt", "r")
-# for line in rdFile:
-#     print(line, end="")
+rdFile = open("sorted.txt", "r")
+for line in rdFile:
+    print(line, end="")
 
 
 #=============================================================================================
@@ -70,45 +70,45 @@ readlines(), and write()'''
 dictionary with distinct words and their frequency of occurrences. Sort the dictionary in the
 reverse order of frequency and display dictionary slice of first 10 items.'''
 
-# import sys
-# import string
-# import os.path
+import sys
+import string
+import os.path
 
-# fname = input("Enter the filename: ")
+fname = input("Enter the filename: ")
 
-# # Sample file text.txt also provided
-# if not os.path.isfile(fname):
-#     print("File", fname, "doesn't exist")
-#     sys.exit(0)
+# Sample file text.txt also provided
+if not os.path.isfile(fname):
+    print("File", fname, "doesn't exist")
+    sys.exit(0)
 
-# infile = open(fname, "r")
-# filecontents = ""
+infile = open(fname, "r")
+filecontents = ""
 
-# for line in infile:
-#     for ch in line:
-#         if ch not in string.punctuation:
-#             filecontents = filecontents + ch
-#         else:
-#             filecontents = filecontents + ' '
+for line in infile:
+    for ch in line:
+        if ch not in string.punctuation:
+            filecontents = filecontents + ch
+        else:
+            filecontents = filecontents + ' '
 
-# # Replace punctuations and \n with space
-# wordFreq = {}
-# wordList = filecontents.split()
+# Replace punctuations and \n with space
+wordFreq = {}
+wordList = filecontents.split()
 
-# # Calculate word frequency
-# for word in wordList:
-#     if word not in wordFreq.keys():
-#         wordFreq[word] = 1
-#     else:
-#         wordFreq[word] += 1
+# Calculate word frequency
+for word in wordList:
+    if word not in wordFreq.keys():
+        wordFreq[word] = 1
+    else:
+        wordFreq[word] += 1
 
-# # Sort dictionary based on values in descending order
-# sortedWordFreq = sorted(wordFreq.items(), key=lambda x: x[1], reverse=True)
+# Sort dictionary based on values in descending order
+sortedWordFreq = sorted(wordFreq.items(), key=lambda x: x[1], reverse=True)
 
-# for i in range(10):
-#     print(sortedWordFreq[i][0], "occurs", sortedWordFreq[i][1], "times")
+for i in range(10):
+    print(sortedWordFreq[i][0], "occurs", sortedWordFreq[i][1], "times")
 
-# sortedWordFreq = sorted(wordFreq.items(), key=lambda x: x[1], reverse=True)
+sortedWordFreq = sorted(wordFreq.items(), key=lambda x: x[1], reverse=True)
 
 
 #=========================================================================================
