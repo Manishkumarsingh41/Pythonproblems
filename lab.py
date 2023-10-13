@@ -2,8 +2,7 @@
 Write suitable assertion for a greater than 0 in function DivExp and raise an exception for when
 b=0. Develop a suitable program which reads two values from the console and calls a function
 DivExp.'''
-
-
+
 import sys
 def DivExp(a,b):
     assert a>0, "a should be greater than 0"
