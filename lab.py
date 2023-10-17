@@ -71,8 +71,7 @@ reverse order of frequency and display dictionary slice of first 10 items.'''
 
 import sys
 import string
-import os.path
-
+import os.path
 fname = input("Enter the filename: ")
 
 # Sample file text.txt also provided
